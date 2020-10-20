@@ -1,0 +1,17 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Commission extends Model
+{
+    protected $table = "commissions" ;
+    protected $fillable = [
+        'pos_id' ,'date','commission'
+    ];
+    public function pos()
+    {
+        return $this->belongsTo('\App\Models\Pos' , 'pos_id' );
+    }
+}
